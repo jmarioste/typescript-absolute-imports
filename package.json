@@ -1,0 +1,15 @@
+{
+  "name": "typescript-dynamic-filter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jasser Mark Arioste",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --files index.ts"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
+  }
+}
