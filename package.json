@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev --files index.ts"
+    "dev": "ts-node-dev --files index.ts",
+    "start": "node ./dist/index.js"
   },
   "devDependencies": {
     "ts-node-dev": "^2.0.0",
