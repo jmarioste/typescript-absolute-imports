@@ -1,9 +1,26 @@
-import _users from "data/users.json"
-import { User } from "types/User";
+import MyService from "services/MyService";
+import express from "express";
+const PORT = process.env.PORT || 8080;
+async function bootstrap() {
+  console.log(new MyService())
+  const app = express();
+  app.get("/", (_, res) => {
+    res.send("Hello, world")
+  });
+  const instance = app.listen({ port: PORT }, () => {
+    console.log(`App is listening on http://localhost:${PORT}`);
+  });
 
-const users = _users as User[];
-const user = users[0];
+  process.on("exit", (code) => {
+    instance.close(() => {
+      console.log("Http server closed.");
+      process.exit(1);
+    });
+  });
 
-console.log(user.first_name)
+  process.on("beforeExit", (code) => {
+    process.exit(1);
+  });
+}
 
-
+bootstrap();
